@@ -3,11 +3,22 @@ SwiftyBase64 provides base64url and base64 encoders as defined by
 [RFC 4648](https://tools.ietf.org/html/rfc4648).
 
 ## Usage
+
+### Standard Base64 Encoding
     
     import SwiftyBase64
     ...
     let bytesToEncode : [UInt8] = [1,2,3]
     let base64EncodedString = SwiftyBase64.EncodeString(bytesToEncode)
+    
+### URL and Filename Safe Base64 Encoding
+
+    import SwiftyBase64
+    ...
+    let bytesToEncode : [UInt8] = [1,2,3]
+    let base64EncodedString = SwiftyBase64.EncodeString(bytesToEncode, alphabet:.URLAndFilenameSafe)
+    
+For more examples, see the unit tests.
 
 ## Installation
 
