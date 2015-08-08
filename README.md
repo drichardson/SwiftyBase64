@@ -33,9 +33,7 @@ SwiftyBase64 provides base64url and base64 encoders as defined by
     let base64EncodedASCIIBytes = SwiftyBase64.Encode(bytesToEncode, alphabet:.URLAndFilenameSafe)
 
 
-## Installation
-
-### CocoaPods
+## CocoaPods Installation
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
