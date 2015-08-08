@@ -14,7 +14,7 @@ public enum Alphabet {
 }
 
 public func EncodeString(bytes : [UInt8], alphabet : Alphabet = .Standard) -> String {
-    return String(bytes: Encode(bytes, alphabet), encoding: NSASCIIStringEncoding)!
+    return String(bytes: Encode(bytes, alphabet : alphabet), encoding: NSASCIIStringEncoding)!
 }
 
 private func tableForAlphabet(encoding : Alphabet) -> [UInt8] {
@@ -31,7 +31,7 @@ private func tableForAlphabet(encoding : Alphabet) -> [UInt8] {
 // table to use. RFC 4648 defines two such alphabet:
 //   - the standard alphabet (section 4)
 //   - the "URL and Filename safe" Base 64 Alphabet. (section 5)
-public func Encode(bytes : [UInt8], alphabet : Alphabet) -> [UInt8] {
+public func Encode(bytes : [UInt8], alphabet : Alphabet = .Standard) -> [UInt8] {
     var encoded : [UInt8] = []
     
     var b = bytes[0..<bytes.count]

@@ -86,10 +86,14 @@ class SwiftyBase64Tests: XCTestCase {
         XCTAssertEqual(SwiftyBase64.EncodeString(b, alphabet:.URLAndFilenameSafe), expectedURLSafe)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
+    func testPerformanceBase64() {
+        var b = [UInt8]()
+        for i in 0...(50*1024) {
+            b.append(UInt8(i % 256))
+        }
+        
         self.measureBlock() {
-            // Put the code you want to measure the time of here.
+            SwiftyBase64.Encode(b)
         }
     }
     
