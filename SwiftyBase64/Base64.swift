@@ -6,19 +6,34 @@
 //
 //
 
-// Base64 encoding as described by RFC 4648: https://tools.ietf.org/html/rfc4648
+/**
+    Base64 Alphabet to use during encoding.
 
+    - Standard: The standard Base64 encoding, defined in RFC 4648 section 4.
+    - URLAndFilenameSafe: The base64url encoding, defined in RFC 4648 section 5.
+*/
 public enum Alphabet {
+    /// The standard Base64 alphabet
     case Standard
+    
+    /// The URL and Filename Safe Base64 alphabet
     case URLAndFilenameSafe
 }
 
+/**
+    Encode a [UInt8] byte array as a Base64 String.
+
+    :param: bytes Bytes to encode.
+    :param: alphabet The Base64 alphabet to encode with.
+    :returns: A String of the encoded bytes.
+*/
 public func EncodeString(bytes : [UInt8], alphabet : Alphabet = .Standard) -> String {
     return String(bytes: Encode(bytes, alphabet : alphabet), encoding: NSASCIIStringEncoding)!
 }
 
-private func tableForAlphabet(encoding : Alphabet) -> [UInt8] {
-    switch encoding {
+/// Get the encoding table for the alphabet.
+private func tableForAlphabet(alphabet : Alphabet) -> [UInt8] {
+    switch alphabet {
     case .Standard:
         return StandardAlphabet
     case .URLAndFilenameSafe:
@@ -26,11 +41,18 @@ private func tableForAlphabet(encoding : Alphabet) -> [UInt8] {
     }
 }
 
-// Use the Base64 algorithm as decribed by RFC 4648 section 4 to
-// encode the input bytes. The alphabet specifies the translation
-// table to use. RFC 4648 defines two such alphabet:
-//   - the standard alphabet (section 4)
-//   - the "URL and Filename safe" Base 64 Alphabet. (section 5)
+/**
+    Use the Base64 algorithm as decribed by RFC 4648 section 4 to
+    encode the input bytes. The alphabet specifies the translation
+    table to use. RFC 4648 defines two such alphabets:
+
+    - Standard (section 4)
+    - URL and Filename Safe (section 5)
+
+    :param: bytes Bytes to encode.
+    :param: alphabet The Base64 alphabet to encode with.
+    :returns: Base64 encoded ASCII bytes.
+*/
 public func Encode(bytes : [UInt8], alphabet : Alphabet = .Standard) -> [UInt8] {
     var encoded : [UInt8] = []
     

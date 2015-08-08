@@ -6,11 +6,11 @@
 //
 //
 
-// The tables in this file were generated using generate_alphabet_table.c. To run:
-// gcc generate_alphabet_table.c && ./a.out
+// The tables in this file were generated using generate_alphabet_table in the tools directory.
 // Note the tables contain 65 characters: 64 to do the translation and 1 more for the padding
 // character used in each alphabet.
 
+/// Standard Base64 encoding table.
 let StandardAlphabet : [UInt8] = [
     65, // 0=A
     66, // 1=B
@@ -80,6 +80,7 @@ let StandardAlphabet : [UInt8] = [
     61, // 64==
 ]
 
+/// URL and Filename Safe Base64 encoding table.
 let URLAndFilenameSafeAlphabet : [UInt8] = [
     65, // 0=A
     66, // 1=B
