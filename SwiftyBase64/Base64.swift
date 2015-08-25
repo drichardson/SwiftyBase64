@@ -28,7 +28,12 @@ public enum Alphabet {
     :returns: A String of the encoded bytes.
 */
 public func EncodeString(bytes : [UInt8], alphabet : Alphabet = .Standard) -> String {
-    return String(bytes: Encode(bytes, alphabet : alphabet), encoding: NSASCIIStringEncoding)!
+    let encoded = Encode(bytes, alphabet : alphabet)
+    var result = String()
+    for b in encoded {
+        result.append(UnicodeScalar(b))
+    }
+    return result
 }
 
 /// Get the encoding table for the alphabet.
