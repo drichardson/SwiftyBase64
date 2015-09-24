@@ -47,7 +47,7 @@ To integrate SwiftyBase64 into your Xcode project using CocoaPods, specify it in
 
 ```ruby
 use_frameworks!
-pod 'SwiftyBase64', '~> 0.9'
+pod 'SwiftyBase64', '~> 1.0'
 ```
 
 Then, run the following command:
