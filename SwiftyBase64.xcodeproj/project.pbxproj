@@ -164,6 +164,8 @@
 		9141D5B11B757AA5008208DF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				TargetAttributes = {
 					9141D5B91B757AA6008208DF = {
@@ -409,6 +411,7 @@
 				9141D5D21B757AA6008208DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9141D5D31B757AA6008208DF /* Build configuration list for PBXNativeTarget "SwiftyBase64Tests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +420,7 @@
 				9141D5D51B757AA6008208DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
