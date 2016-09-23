@@ -27,17 +27,17 @@ public enum Alphabet {
     - parameter alphabet: The Base64 alphabet to encode with.
     - returns: A String of the encoded bytes.
 */
-public func EncodeString(bytes : [UInt8], alphabet : Alphabet = .Standard) -> String {
+public func EncodeString(_ bytes : [UInt8], alphabet : Alphabet = .Standard) -> String {
     let encoded = Encode(bytes, alphabet : alphabet)
     var result = String()
     for b in encoded {
-        result.append(UnicodeScalar(b))
+        result.append(String(UnicodeScalar(b)))
     }
     return result
 }
 
 /// Get the encoding table for the alphabet.
-private func tableForAlphabet(alphabet : Alphabet) -> [UInt8] {
+private func tableForAlphabet(_ alphabet : Alphabet) -> [UInt8] {
     switch alphabet {
     case .Standard:
         return StandardAlphabet
@@ -58,7 +58,7 @@ private func tableForAlphabet(alphabet : Alphabet) -> [UInt8] {
     - parameter alphabet: The Base64 alphabet to encode with.
     - returns: Base64 encoded ASCII bytes.
 */
-public func Encode(bytes : [UInt8], alphabet : Alphabet = .Standard) -> [UInt8] {
+public func Encode(_ bytes : [UInt8], alphabet : Alphabet = .Standard) -> [UInt8] {
     var encoded : [UInt8] = []
     
     let table = tableForAlphabet(alphabet)
@@ -67,7 +67,7 @@ public func Encode(bytes : [UInt8], alphabet : Alphabet = .Standard) -> [UInt8] 
     var i = 0
     let count = bytes.count
     
-    for ; i+3 <= count; i += 3 {
+    while i+3 <= count {
         let one = bytes[i] >> 2
         let two = ((bytes[i] & 0b11) << 4) | ((bytes[i+1] & 0b11110000) >> 4)
         let three = ((bytes[i+1] & 0b00001111) << 2) | ((bytes[i+2] & 0b11000000) >> 6)
@@ -77,6 +77,8 @@ public func Encode(bytes : [UInt8], alphabet : Alphabet = .Standard) -> [UInt8] 
         encoded.append(table[Int(two)])
         encoded.append(table[Int(three)])
         encoded.append(table[Int(four)])
+        
+        i += 3
     }
     
     if i+2 == count {

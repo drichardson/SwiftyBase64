@@ -92,8 +92,8 @@ class SwiftyBase64Tests: XCTestCase {
             b.append(UInt8(i % 256))
         }
         
-        self.measureBlock() {
-            SwiftyBase64.Encode(b)
+        self.measure() {
+            _ = SwiftyBase64.Encode(b)
         }
     }
     
