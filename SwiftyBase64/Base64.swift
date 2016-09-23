@@ -21,13 +21,13 @@ public enum Alphabet {
 }
 
 /**
- Encode a [UInt8] byte array as a Base64 String.
- 
- - parameter bytes: Bytes to encode.
- - parameter alphabet: The Base64 alphabet to encode with.
- - returns: A String of the encoded bytes.
- */
-public func EncodeString(_ bytes : [UInt8], alphabet : Alphabet = .standard) -> String {
+    Encode a [UInt8] byte array as a Base64 String.
+
+    - parameter bytes: Bytes to encode.
+    - parameter alphabet: The Base64 alphabet to encode with.
+    - returns: A String of the encoded bytes.
+*/
+public func EncodeString(_ bytes : [UInt8], alphabet : Alphabet = .Standard) -> String {
     let encoded = Encode(bytes, alphabet : alphabet)
     var result = String()
     for b in encoded {
@@ -47,18 +47,18 @@ private func tableForAlphabet(_ alphabet : Alphabet) -> [UInt8] {
 }
 
 /**
- Use the Base64 algorithm as decribed by RFC 4648 section 4 to
- encode the input bytes. The alphabet specifies the translation
- table to use. RFC 4648 defines two such alphabets:
- 
- - Standard (section 4)
- - URL and Filename Safe (section 5)
- 
- - parameter bytes: Bytes to encode.
- - parameter alphabet: The Base64 alphabet to encode with.
- - returns: Base64 encoded ASCII bytes.
- */
-public func Encode(_ bytes : [UInt8], alphabet : Alphabet = .standard) -> [UInt8] {
+    Use the Base64 algorithm as decribed by RFC 4648 section 4 to
+    encode the input bytes. The alphabet specifies the translation
+    table to use. RFC 4648 defines two such alphabets:
+
+    - Standard (section 4)
+    - URL and Filename Safe (section 5)
+
+    - parameter bytes: Bytes to encode.
+    - parameter alphabet: The Base64 alphabet to encode with.
+    - returns: Base64 encoded ASCII bytes.
+*/
+public func Encode(_ bytes : [UInt8], alphabet : Alphabet = .Standard) -> [UInt8] {
     var encoded : [UInt8] = []
     
     let table = tableForAlphabet(alphabet)
