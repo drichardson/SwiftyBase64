@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SwiftyBase64"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "base64 and base64url encoders in Swift"
   s.homepage     = "https://github.com/drichardson/SwiftyBase64"
   s.license      = { :type => "MIT", :file => "LICENSE" }
