@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9141D5C01B757AA6008208DF /* SwiftyBase64.h in Headers */ = {isa = PBXBuildFile; fileRef = 9141D5BF1B757AA6008208DF /* SwiftyBase64.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9141D5C61B757AA6008208DF /* SwiftyBase64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9141D5BA1B757AA6008208DF /* SwiftyBase64.framework */; };
 		9141D5CD1B757AA6008208DF /* SwiftyBase64Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141D5CC1B757AA6008208DF /* SwiftyBase64Tests.swift */; };
 		9141D5D71B757AB5008208DF /* Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9141D5D61B757AB5008208DF /* Base64.swift */; };
@@ -27,7 +26,6 @@
 /* Begin PBXFileReference section */
 		9141D5BA1B757AA6008208DF /* SwiftyBase64.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyBase64.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9141D5BE1B757AA6008208DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9141D5BF1B757AA6008208DF /* SwiftyBase64.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftyBase64.h; sourceTree = "<group>"; };
 		9141D5C51B757AA6008208DF /* SwiftyBase64Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftyBase64Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9141D5CB1B757AA6008208DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9141D5CC1B757AA6008208DF /* SwiftyBase64Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyBase64Tests.swift; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 			children = (
 				9141D5D81B7591DD008208DF /* Alphabets.swift */,
 				9141D5D61B757AB5008208DF /* Base64.swift */,
-				9141D5BF1B757AA6008208DF /* SwiftyBase64.h */,
 				9141D5BD1B757AA6008208DF /* Supporting Files */,
 			);
 			path = SwiftyBase64;
@@ -115,7 +112,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9141D5C01B757AA6008208DF /* SwiftyBase64.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

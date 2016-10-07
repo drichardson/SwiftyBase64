@@ -16,32 +16,32 @@ class SwiftyBase64Tests: XCTestCase {
     
     func testEmpty() {
         XCTAssertEqual(SwiftyBase64.EncodeString([]), "")
-        XCTAssertEqual(SwiftyBase64.EncodeString([], alphabet:.urlAndFilenameSafe), "")
+        XCTAssertEqual(SwiftyBase64.EncodeString([], alphabet:.URLAndFilenameSafe), "")
     }
     
     func testBase64OneByte() {
         XCTAssertEqual(SwiftyBase64.EncodeString([0]), "AA==")
-        XCTAssertEqual(SwiftyBase64.EncodeString([0], alphabet:.urlAndFilenameSafe), "AA==")
+        XCTAssertEqual(SwiftyBase64.EncodeString([0], alphabet:.URLAndFilenameSafe), "AA==")
     }
     
     func testBase64TwoBytes() {
         XCTAssertEqual(SwiftyBase64.EncodeString([0,0]), "AAA=")
-        XCTAssertEqual(SwiftyBase64.EncodeString([0,0], alphabet:.urlAndFilenameSafe), "AAA=")
+        XCTAssertEqual(SwiftyBase64.EncodeString([0,0], alphabet:.URLAndFilenameSafe), "AAA=")
     }
     
     func testBase64ThreeBytes() {
         XCTAssertEqual(SwiftyBase64.EncodeString([0,0,0]), "AAAA")
-        XCTAssertEqual(SwiftyBase64.EncodeString([0,0,0], alphabet:.urlAndFilenameSafe), "AAAA")
+        XCTAssertEqual(SwiftyBase64.EncodeString([0,0,0], alphabet:.URLAndFilenameSafe), "AAAA")
     }
     
     func test255() {
         XCTAssertEqual(SwiftyBase64.EncodeString([255]), "/w==")
-        XCTAssertEqual(SwiftyBase64.EncodeString([255], alphabet:.urlAndFilenameSafe), "_w==")
+        XCTAssertEqual(SwiftyBase64.EncodeString([255], alphabet:.URLAndFilenameSafe), "_w==")
     }
     
     func test254Thru255() {
         XCTAssertEqual(SwiftyBase64.EncodeString([254, 255]), "/v8=")
-        XCTAssertEqual(SwiftyBase64.EncodeString([254, 255], alphabet:.urlAndFilenameSafe), "_v8=")
+        XCTAssertEqual(SwiftyBase64.EncodeString([254, 255], alphabet:.URLAndFilenameSafe), "_v8=")
     }
     
     func testZeroThrough255() {
@@ -55,7 +55,7 @@ class SwiftyBase64Tests: XCTestCase {
         }
         
         XCTAssertEqual(SwiftyBase64.EncodeString(b), expectedStandard)
-        XCTAssertEqual(SwiftyBase64.EncodeString(b, alphabet:.urlAndFilenameSafe), expectedURLSafe)
+        XCTAssertEqual(SwiftyBase64.EncodeString(b, alphabet:.URLAndFilenameSafe), expectedURLSafe)
     }
     
     func testOneThrough255() {
@@ -69,7 +69,7 @@ class SwiftyBase64Tests: XCTestCase {
         }
         
         XCTAssertEqual(SwiftyBase64.EncodeString(b), expectedStandard)
-        XCTAssertEqual(SwiftyBase64.EncodeString(b, alphabet:.urlAndFilenameSafe), expectedURLSafe)
+        XCTAssertEqual(SwiftyBase64.EncodeString(b, alphabet:.URLAndFilenameSafe), expectedURLSafe)
     }
     
     func testTwoThrough255() {
@@ -83,7 +83,7 @@ class SwiftyBase64Tests: XCTestCase {
         }
         
         XCTAssertEqual(SwiftyBase64.EncodeString(b), expectedStandard)
-        XCTAssertEqual(SwiftyBase64.EncodeString(b, alphabet:.urlAndFilenameSafe), expectedURLSafe)
+        XCTAssertEqual(SwiftyBase64.EncodeString(b, alphabet:.URLAndFilenameSafe), expectedURLSafe)
     }
     
     func testPerformanceBase64() {

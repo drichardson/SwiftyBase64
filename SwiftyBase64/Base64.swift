@@ -14,10 +14,10 @@
  */
 public enum Alphabet {
     /// The standard Base64 alphabet
-    case standard
+    case Standard
     
     /// The URL and Filename Safe Base64 alphabet
-    case urlAndFilenameSafe
+    case URLAndFilenameSafe
 }
 
 /**
@@ -39,9 +39,9 @@ public func EncodeString(_ bytes : [UInt8], alphabet : Alphabet = .Standard) -> 
 /// Get the encoding table for the alphabet.
 private func tableForAlphabet(_ alphabet : Alphabet) -> [UInt8] {
     switch alphabet {
-    case .standard:
+    case .Standard:
         return StandardAlphabet
-    case .urlAndFilenameSafe:
+    case .URLAndFilenameSafe:
         return URLAndFilenameSafeAlphabet
     }
 }
