@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source_files = "SwiftyBase64"
   
   s.ios.deployment_target = "8.0"
-  //s.watchos.deployment_target = "2.0"  watchos
-  //s.tvos.deployment_target = "9.0"  tvos
-  s.osx.deployment_target = "10.10" //if this code support osx 10.10.ues it
+  #s.watchos.deployment_target = "2.0"  watchos
+  #s.tvos.deployment_target = "9.0"  tvos
+  s.osx.deployment_target = "10.10" #if this code support osx 10.10.ues it
 end
